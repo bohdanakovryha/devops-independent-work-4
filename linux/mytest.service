@@ -1,0 +1,13 @@
+[Unit]
+Description=Test service: writes a line to /tmp/test.log every minute
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/mytest
+ExecStart=/opt/mytest/mytest.sh
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
